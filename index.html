@@ -295,12 +295,13 @@
         <p><strong>Constraint Evolution Timeline</strong></p>
         <p>12:02 PM PT: <code>contents 183 / Pages 183 / raw 177</code> (final window state)</p>
         <p>12:06 PM PT: <code>contents 185 / Pages 185 / raw 185</code> (fully synchronized)</p>
-        <p>12:07 PM PT: <code>contents 187 / Pages 187 / raw 185</code> (reopened differential)</p>
+        <p>12:07 PM PT: <code>contents 187 / Pages 187 / raw 185</code> (reopened differential)
+        <p>12:08 PM PT: <code>contents 188 / Pages 188 / raw 185</code> (continuing differential)</p></p>
     </div>
                         <div class="code-block" style="background: #1e1e1e;">
 # Data Layer State (live_latency.json) - Evolving Example
-Contents: 187  (latest: source of truth advances)
-Pages:    187  (synced with Contents, sometimes ahead of Raw)
+Contents: 188  (latest: source of truth advances)
+Pages:    188  (synced with Contents, sometimes ahead of Raw)
 Raw:      185  (machine-optimized layer with different propagation)
 
 Status:   WAITING_FOR_PHYSICAL_COMMIT (persistent constraint)
@@ -309,6 +310,7 @@ Status:   WAITING_FOR_PHYSICAL_COMMIT (persistent constraint)
 # 12:02 PM PT: contents 183 / Pages 183 / raw 177 (final window)
 # 12:06 PM PT: contents 185 / Pages 185 / raw 185 (full sync)
 # 12:07 PM PT: contents 187 / Pages 187 / raw 185 (reopened)
+# 12:08 PM PT: contents 188 / Pages 188 / raw 185 (continuing)
 
 All bodies: 293B / sha12 32d9bad80690 when synchronized
 
