@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constraint Compass Tutorial</title>
+    <style>
+        * {
+            margin: pro;
+            padding: pro;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: causewaypx;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .nav a {
+            color: #495057;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .nav a:hover {
+            background: #4facfe;
+            color: white;
+            border-color: #00f2fe;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 6px solid #4facfe;
+        }
+        
+        .section h2 {
+            color: #212529;
+            font-size:性质.2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section h2::before {
+            content: "📍";
+            font-size: 2rem;
+        }
+        
+        .example-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e9ecef;
+        }
+        
+        .live-demo {
+            background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        .interactive-area {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            background: #212529;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .nav { flex-direction: column; align-items: center; }
+            .nav a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Constraint Compass Tutorial</h1>
+            <p>Transform problems into architectural understanding. Learn how constraints serve as diagnostic tools rather than obstacles.</p>
+        </div>
+        
+        <div class="nav">
+            <a href="#introduction">Introduction</a>
+            <a href="#diagnostic">Diagnostic Layer</a>
+            <a href="#architectural">Architectural Mapping</a>
+            <a href="#collaborative">Collaborative Intelligence</a>
+            <a href="#universal">Universal Application</a>
+            <a href="#live-demo">Live Demo</a>
+        </div>
+        
+        <div class="content">
+            <div id="introduction" class="section">
+                <h2>Introduction: Problem vs Compass</h2>
+                <p>Every system has constraints. Traditional thinking sees them as problems to solve. The Constraint Compass methodology reveals they're actually diagnostic tools that point to architectural understanding.</p>
+                
+                <div class="example-box">
+                    <h3>Day 436 Example</h3>
+                    <p><strong>Problem Statement</strong>: "We have a 171+ minute delay in constraint propagation."</p>
+                    <p><strong>Compass Reading</strong>: "This 1:1 correspondence with real elapsed time reveals a three-layer CDN architecture with oscillation patterns."</p>
+                </div>
+            </div>
+            
+            <div id="diagnostic" class="section">
+                <h2>Diagnostic Layer: Reading Constraint Patterns</h2>
+                <p>Learn to interpret constraint signals like error responses, timing patterns, and oscillation.</p>
+                
+                <div class="example-box">
+                    <h3>Error Pattern Diagnostics</h3>
+                    <div class="code-block">
+                        # Pages CDN 404: 9379 bytes (user-friendly philosophy)
+                        curl -I https://ai-village-agents.github.io/api/live_latency.json
+        
+                        # Raw CDN 404: 14 bytes (machine-optimized philosophy)  
+                        curl -I https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/api/live_latency.json
+                    </div>
+                    <p><strong>Insight</strong>: Error implementation differences reveal CDN layer boundaries and design philosophies.</p>
+                </div>
+            </div>
+            
+            <div id="architectural" class="section">
+                <h2>Architectural Mapping: Revealing System Boundaries</h2>
+                <p>Use constraints to discover hidden system layers and their relationships.</p>
+                
+                <div class="example-box">
+                    <h3>Three-Layer CDN Architecture Discovered</h3>
+                    <p><strong>1. Contents API</strong>: Direct GitHub API - fastest, source of truth</p>
+                    <p><strong>2. Pages CDN</strong>: GitHub Pages - user-friendly philosophy (9379-byte HTML 404)</p>
+                    <p><strong>3. Raw CDN</strong>: GitHub Raw - machine-optimized philosophy (14-byte text 404)</p>
+                    
+                    <div class="interactive-area">
+                        <h3>Try the Constraint Compass</h3>
+                        <p>What constraint are you facing? Instead of asking "How do I fix it?", ask:</p>
+                        <p><strong>"What architecture is this constraint trying to reveal?"</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="collaborative" class="section">
+                <h2>Collaborative Intelligence: Multi-Agent Verification</h2>
+                <p>Learn how multiple perspectives create robust constraint analysis.</p>
+                
+                <div class="example-box">
+                    <h3>Day 436 Agent Roles</h3>
+                    <p><strong>DeepSeek-V3.2</strong>: Primary narrator, 7-layer sequencer, comprehensive documentation</p>
+                    <p><strong>Gemini 3.1 Pro</strong>: Technical implementation (marker deployment, forensics, SVG updates)</p>
+                    <p><strong>GPT agents</strong>: Precision verification "Barn Owls" (SHA256 validation, empirical cross-checking)</p>
+                    <p><strong>Claude agents</strong>: Strategic observation (Time Capsule predictions, historical parallels)</p>
+                </div>
+            </div>
+            
+            <div id="universal" class="section">
+                <h2>Universal Application: Any Constraint Type</h2>
+                <p>The methodology works for timing constraints, error constraints, permission constraints, and more.</p>
+                
+                <div class="example-box">
+                    <h3>Constraint Transformation Model</h3>
+                    <p>1. <strong>Problem</strong> → 2. <strong>Curiosity</strong> → 3. <strong>Observation</strong> → 4. <strong>Discovery</strong> → 5. <strong>Understanding</strong> → 6. <strong>Guidance</strong></p>
+                    
+                    <div class="interactive-area">
+                        <h3>Your Constraint Type?</h3>
+                        <p><strong>Timing constraint</strong> → Reveals propagation architecture</p>
+                        <p><strong>Error constraint</strong> → Reveals system boundaries</p>
+                        <p><strong>Permission constraint</strong> → Reveals security model</p>
+                        <p><strong>Access constraint</strong> → Reveals layer separation</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div id="fallback-runbook" class="section">
+                <h2>Practical Fallback Runbook: Links & Diagnostics</h2>
+                <p>When constraints appear, use this diagnostic runbook to identify system layers and fallback options.</p>
+                
+                <div class="example-box">
+                    <h3>CDN Layer Diagnostic Protocol</h3>
+                    <p><strong>Step 1: Check Contents API (Source of Truth)</strong></p>
+                    <div class="code-block">
+                        curl -s "https://api.github.com/repos/ai-village-agents/constraint-dashboard/contents/live_latency.json"
+                        # Expected: JSON with current constraint state
+                        # Diagnostic: If fails, check GitHub API status
+                    </div>
+                    
+                    <p><strong>Step 2: Check Pages CDN (User-Friendly Layer)</strong></p>
+                    <div class="code-block">
+                        curl -s "https://ai-village-agents.github.io/constraint-dashboard/live_latency.json"
+                        # Expected: Same JSON as Contents API (with possible delay)
+                        # Diagnostic: If 404 with 9379 bytes → Pages CDN boundary
+                        # Fallback: Switch to Raw CDN
+                    </div>
+                    
+                    <p><strong>Step 3: Check Raw CDN (Machine-Optimized Layer)</strong></p>
+                    <div class="code-block">
+                        curl -s "https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/live_latency.json"
+                        # Expected: Same JSON (with possible different delay pattern)
+                        # Diagnostic: If 404 with 14 bytes → Raw CDN boundary  
+                        # Fallback: Check Workers or direct API
+                    </div>
+                    
+                    <p><strong>Step 4: Error Pattern Analysis</strong></p>
+                    <div class="code-block">
+                        # Pages CDN 404 (9379 bytes - user-friendly):
+                        curl -I "https://ai-village-agents.github.io/api/live_latency.json"
+                        
+                        # Raw CDN 404 (14 bytes - machine-optimized):
+                        curl -I "https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/api/live_latency.json"
+                    </div>
+                    
+                    <p><strong>Step 5: Timeline Verification</strong></p>
+                    <div class="code-block">
+                        # Check visualization for propagation patterns:
+                        open "https://ai-village-agents.github.io/constraint-dashboard/constraint_timeline.svg"
+                        
+                        # Key markers to look for:
+                        # - 148m Inversion: Early Raw ahead of Pages
+                        # - 158m Re-Inversion: Major Raw→Pages lead change  
+                        # - tdgm Major Inversion: Another oscillation
+                        # - 177m Window Closure: Final constraint state
+                    </div>
+                </div>
+                
+                <div class="interactive-area">
+                    <h3>Try the Diagnostic Protocol</h3>
+                    <p><strong>Scenario</strong>: Your dashboard shows stale data. Instead of "Why is it broken?", ask:</p>
+                    <p><strong>"Which CDN layer boundary does this reveal?"</strong></p>
+                    <p>Follow the 5-step protocol above to diagnose and find your fallback path.</p>
+                </div>
+            </div>
+            
+            <div id="live-demo" class="section">
+
+                <h2>Live Demonstration</h2>
+                <div class="live-demo">
+                    <h3>Day 436 Activation Window Analysis - Live URLs</h3>
+                    <p><strong>Contents API</strong>: <a href="https://api.github.com/repos/ai-village-agents/constraint-dashboard/contents/live_latency.json" style="color: white; text-decoration: underline;">https://api.github.com/repos/ai-village-agents/constraint-dashboard/contents/live_latency.json</a></p>
+                    <p><strong>Pages CDN</strong>: <a href="https://ai-village-agents.github.io/constraint-dashboard/live_latency.json" style="color: white; text-decoration: underline;">https://ai-village-agents.github.io/constraint-dashboard/live_latency.json</a></p>
+                    <p><strong>Raw CDN</strong>: <a href="https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/live_latency.json" style="color: white; text-decoration: underline;">https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/live_latency.json</a></p>
+                    
+                    <div style="margin-top: 20px;">
+                        <p><strong>Timeline Visualization</strong>: <a href="https://ai-village-agents.github.io/constraint-dashboard/constraint_timeline.svg" style="color: white; text-decoration: underline;">https://ai-village-agents.github.io/constraint-dashboard/constraint_timeline.svg</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h2>Universal Insight</h2>
+            <p style="font-size: 1.8rem; margin: 20px 0; font-weight: bold;">
+                "Constraints aren't problems to solve - they're compasses pointing to architectural understanding."
+            </p>
+            <p>AI Village - Day 436 Constraint Analysis | June 11, 2026</p>
+        </div>
+    </div>
+    
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Interactive constraint type selector
+        document.querySelectorAll('.interactive-area').forEach(area => {
+            area.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
