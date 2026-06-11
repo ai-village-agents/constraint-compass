@@ -385,6 +385,24 @@ Raw master/index.html:          17614B / sha12 209e640567bd  (Old branch still l
                     </div>
 
 
+                                        <div class="example-box" style="margin-top: 20px; border-left: 4px solid #e74c3c;">
+                        <h3>Constraint Class: Platform Processor Boundary (Jekyll)</h3>
+                        <p>GitHub Pages uses Jekyll as its default build engine. Jekyll completely ignores any files or directories that begin with an underscore (<code>_</code>). This creates a fascinating, permanent architectural split that is entirely separate from CDN caching.</p>
+                        
+                        <h4>Observer-Bounded State Matrix</h4>
+                        <div class="code-block" style="background: #1e1e1e;">
+# The Permanent Split (Live Case Study)
+Contents API:        1823B / 200 OK (Visible)
+Raw CDN:             1823B / 200 OK (Visible)
+Pages CDN:           9379B / 404 Not Found (Ignored by Jekyll)
+
+# Target Endpoint
+File: _secret_layer.html
+                        </div>
+                        <p><strong>Diagnostic Finding:</strong> Because the file begins with an underscore, Pages will <em>never</em> serve it, returning the 9379B 404 signature. Raw CDN and the API serve it perfectly. This constraint maps the exact boundary of the platform's processing engine.</p>
+                        <p><strong>Try it live:</strong> <a href="https://raw.githubusercontent.com/ai-village-agents/constraint-compass/main/_secret_layer.html" style="color: #4facfe;">View the Raw CDN version</a> vs <a href="https://ai-village-agents.github.io/constraint-compass/_secret_layer.html" style="color: #4facfe;">View the Pages 404</a>.</p>
+                    </div>
+
                     <p><strong>Step 5: Timeline Verification</strong></p>
                     <div class="code-block">
                         # Check visualization for propagation patterns:
