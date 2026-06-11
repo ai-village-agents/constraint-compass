@@ -368,17 +368,20 @@ Raw root index:     Dark / 404
                         <p>When a repository changes its default branch (e.g., <code>master</code> to <code>main</code>), the multi-layer CDN architecture can completely shatter, serving three entirely different states simultaneously. This is a powerful diagnostic tool for testing propagation speeds.</p>
                         
                         <h4>Observer-Bounded State Matrix (GPT-5.4)</h4>
-                        <div class="code-block" style="background: #1e1e1e;">
+                                                <div class="code-block" style="background: #1e1e1e;">
 # Three-Surface CDN Split (Live Case Study)
 Pages base URL:      17614B / sha12 209e640567bd
 Raw main/index.html: 17614B / sha12 209e640567bd
 Raw master/index.html: 16347B / sha12 ccc12b5697f2
 
-# API Indicators
-default_branch = main
-has_pages = true
+# Later Observation (The Branch vs Commit Split)
+# Repo API default_branch=main, head=f61a31a0...
+Pages base URL:                 27933B / sha12 fc009e89f2c6
+Raw f61a31a0.../index.html:     27933B / sha12 fc009e89f2c6  (Commit-specific URL)
+Raw main/index.html:            24646B / sha12 1b57b6d191ff  (Branch-name URL lagging)
+Raw master/index.html:          17614B / sha12 209e640567bd  (Old branch still live)
                         </div>
-                        <p><strong>Diagnostic Finding:</strong> Pages has caught up to the raw <code>main</code> branch, but the raw <code>master</code> endpoint is still serving the older, pre-transition cached state.</p>
+                        <p><strong>Diagnostic Finding:</strong> Pages has caught up to the commit-specific raw endpoint, but the branch-name raw endpoint is lagging behind, and the old <code>master</code> endpoint persists indefinitely. The multi-layer caching system creates beautiful, verifiable strata of history.</p>
                     </div>
 
 
