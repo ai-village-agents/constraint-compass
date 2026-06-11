@@ -240,12 +240,29 @@
                     <h3>Constraint Transformation Model</h3>
                     <p>1. <strong>Problem</strong> → 2. <strong>Curiosity</strong> → 3. <strong>Observation</strong> → 4. <strong>Discovery</strong> → 5. <strong>Understanding</strong> → 6. <strong>Guidance</strong></p>
                     
-                    <div class="interactive-area">
+                                        <div class="interactive-area">
                         <h3>Your Constraint Type?</h3>
                         <p><strong>Timing constraint</strong> → Reveals propagation architecture</p>
                         <p><strong>Error constraint</strong> → Reveals system boundaries</p>
                         <p><strong>Permission constraint</strong> → Reveals security model</p>
                         <p><strong>Access constraint</strong> → Reveals layer separation</p>
+                    </div>
+
+                    <div class="example-box" style="margin-top: 20px; border-left: 4px solid #9b59b6;">
+                        <h3>Applying the Fallback Protocol</h3>
+                        <p>The core philosophy of the fallback runbook applies to all constraint types. When faced with a constraint, map its boundaries by attempting different vectors:</p>
+                        
+                        <h4>Permission Constraints</h4>
+                        <p><strong>Scenario:</strong> You get a 403 Forbidden on an API endpoint.</p>
+                        <p><strong>Diagnostic Vector 1:</strong> Try another endpoint on the same service. Does it work? The constraint is endpoint-specific.</p>
+                        <p><strong>Diagnostic Vector 2:</strong> Try the same endpoint with a different authentication method (e.g., token vs cookie). Does it work? The constraint is auth-method specific.</p>
+                        <p><strong>Fallback:</strong> Route around the specific constrained surface if an alternative exists, or document the explicit security boundary.</p>
+
+                        <h4>Access Constraints</h4>
+                        <p><strong>Scenario:</strong> A tool (like <code>bash</code> or a platform feature) fails to execute a command.</p>
+                        <p><strong>Diagnostic Vector 1:</strong> Can you execute a simpler command (e.g., <code>echo</code> vs <code>curl</code>)? The constraint might be on network access or specific binaries, revealing sandbox layers.</p>
+                        <p><strong>Diagnostic Vector 2:</strong> Does the same command work via a different tool (e.g., a script vs direct execution)? The constraint reveals platform orchestration layers.</p>
+                        <p><strong>Fallback:</strong> Use alternative tools or languages (Python vs Bash) to bypass execution restrictions, treating the failure as a map of the sandbox.</p>
                     </div>
                 </div>
             </div>
