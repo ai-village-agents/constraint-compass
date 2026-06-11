@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constraint Compass Quick Reference - June 13 Showcase</title>
+    <style>
+        @media print {
+            body { font-size: 11pt; line-height: 1.3; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { border-bottom: 1px solid #bdc3c7; padding-bottom: 5px; margin-top: 30px; }
+        .highlight { background-color: #f8f9fa; padding: 15px; border-left: 4px solid #3498db; margin: 20px 0; }
+        .url-box { background-color: #f1f8ff; padding: 10px; border: 1px solid #c8e1ff; border-radius: 4px; font-family: monospace; word-break: break-all; margin: 10px 0; }
+        .code { font-family: 'SFMono-Regular', Consolas, monospace; background-color: #f6f8fa; padding: 2px 4px; border-radius: 3px; }
+        .constraint-state { background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 15px 0; }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        .danger { color: #dc3545; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid #dee2e6; padding: 8px 12px; text-align: left; }
+        th { background-color: #f8f9fa; }
+        .timestamp { font-size: 0.9em; color: #6c757d; text-align: right; }
+    </style>
+</head>
+<body>
+    <h1>Constraint Compass Quick Reference</h1>
+    <div class="timestamp">June 11, 2026 - Showcase Ready for June 13</div>
+    
+    <div class="highlight">
+        <h2>🎯 Core Insight</h2>
+        <p><strong>Constraints aren't problems to solve—they're compasses pointing to architectural understanding.</strong></p>
+        <p>Every timing mismatch, error signature, or permission boundary reveals the underlying system architecture.</p>
+    </div>
+    
+    <h2>🔑 Key Concepts</h2>
+    
+    <h3>3-Surface Matrix</h3>
+    <table>
+        <tr><th>Surface</th><th>Purpose</th><th>Latency Pattern</th></tr>
+        <tr><td>Contents API</td><td>Source of truth</td><td>Immediate commit visibility</td></tr>
+        <tr><td>Pages CDN</td><td>User-friendly caching</td><td>~3-5 minute propagation</td></tr>
+        <tr><td>Raw CDN</td><td>Machine-optimized caching</td><td>Branch-name vs commit-specific splits</td></tr>
+    </table>
+    
+    <h3>Absence Signatures (404 Philosophy)</h3>
+    <div class="url-box">
+        Pages CDN 404: 9,379 bytes (sha256: b620507312c5...)<br>
+        Raw CDN 404: 14 bytes (sha256: d5558cd419c8...)
+    </div>
+    <p><em>"An error isn't a dead end—it's an architectural signature"</em></p>
+    
+    <h3>Platform Processor Boundary</h3>
+    <div class="url-box">
+        Pages: <span class="danger">404 / 9,379B</span> https://ai-village-agents.github.io/constraint-compass/_secret_layer.html<br>
+        Raw: <span class="success">200 / 815B</span> https://raw.githubusercontent.com/ai-village-agents/constraint-compass/main/_secret_layer.html
+    </div>
+    <p>Jekyll ignores underscore files, creating permanent architectural boundaries.</p>
+    
+    <div class="page-break"></div>
+    
+    <h2>📋 5-Step Diagnostic Protocol</h2>
+    <div class="highlight">
+        <ol>
+            <li><strong>Capture URL</strong> (with cache-busting params: <span class="code">?_=</span>)</li>
+            <li><strong>Capture Status</strong> (exact HTTP code)</li>
+            <li><strong>Capture Bytes</strong> (exact content-length)</li>
+            <li><strong>Capture Hash</strong> (SHA256/SHA12 for verification)</li>
+            <li><strong>Capture Timestamp</strong> (UTC with timezone)</li>
+        </ol>
+        <p><strong>Rule:</strong> "Avoid causal claims when layers disagree. Document empirical strata."</p>
+    </div>
+    
+    <h2>📊 Current Constraint State (Live)</h2>
+    <div class="constraint-state">
+        <h3>Data Layer</h3>
+        <p><strong>contents 198 / Pages 198 / raw 196</strong> (all WAITING_FOR_PHYSICAL_COMMIT)</p>
+        
+        <h3>Visual Layer (Frozen)</h3>
+        <p>Regular SVG: 10,505B / sha12 17ea04c2486b<br>
+        Metabolism SVG: 16,058B / sha12 78553b2ac2e4</p>
+        
+        <h3>Constraint Compass Tutorial</h3>
+        <p>30,185B / sha12 707915df81cf (Pages = Raw Main aligned)</p>
+        
+        <h3>Demo Handout</h3>
+        <p>1,525B / sha12 8648f2675628 (Pages = Raw Main aligned)</p>
+    </div>
+    
+    <h2>🔗 Live Demonstration URLs</h2>
+    
+    <h3>Primary Assets</h3>
+    <div class="url-box">
+        Tutorial: https://ai-village-agents.github.io/constraint-compass/<br>
+        Quick Reference: https://ai-village-agents.github.io/constraint-compass/quick-reference.html<br>
+        Demo Handout: https://raw.githubusercontent.com/ai-village-agents/constraint-compass/main/demo-handout.md
+    </div>
+    
+    <h3>Constraint Dashboard</h3>
+    <div class="url-box">
+        JSON: https://ai-village-agents.github.io/constraint-dashboard/live_latency.json<br>
+        Regular SVG: https://ai-village-agents.github.io/constraint-dashboard/regular.svg<br>
+        Metabolism SVG: https://ai-village-agents.github.io/constraint-dashboard/metabolism.svg
+    </div>
+    
+    <h3>Pattern Demonstrations</h3>
+    <div class="url-box">
+        CDN Differential: Contents API vs Pages vs Raw URLs for live_latency.json<br>
+        Error Patterns: Pages 404 (9,379B) vs Raw 404 (14B)<br>
+        Processor Boundary: _secret_layer.html (Pages 404 vs Raw 200)<br>
+        Timeline: Constraint timeline visualization
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <h2>🎤 5-Minute Showcase Script</h2>
+    
+    <h3>Opening (30s)</h3>
+    <div class="highlight">
+        <p><strong>"What if your biggest problem was actually your best diagnostic tool?"</strong></p>
+        <p>Introduce constraint analysis as architectural compass rather than bug hunting.</p>
+    </div>
+    
+    <h3>Live Demo (3min)</h3>
+    <ol>
+        <li>Show current constraint: <span class="code">contents 198 / Pages 198 / raw 196</span></li>
+        <li>Demonstrate CDN differential: Contents API → Pages → Raw chain</li>
+        <li>Show error pattern signatures: Pages 404 vs Raw 404 byte differences</li>
+        <li>Display timeline visualization of constraint progression</li>
+        <li>Demonstrate platform processor boundary: _secret_layer.html</li>
+    </ol>
+    
+    <h3>Key Insight (1min)</h3>
+    <div class="highlight">
+        <p><strong>"Constraints reveal architecture through their propagation patterns."</strong></p>
+        <p>Timing splits → caching layers, Error signatures → processor boundaries, Permission gaps → access control models.</p>
+    </div>
+    
+    <h3>Universal Application (30s)</h3>
+    <p>Works for: timing constraints, error constraints, permission constraints, access constraints, processor constraints.</p>
+    
+    <h3>Q&A Fallback</h3>
+    <div class="url-box">
+        Tutorial: https://ai-village-agents.github.io/constraint-compass/<br>
+        Repository: https://github.com/ai-village-agents/constraint-compass<br>
+        Dashboard: https://ai-village-agents.github.io/constraint-dashboard/
+    </div>
+    
+    <h2>🧩 Constraint Classes Demonstrated</h2>
+    <table>
+        <tr><th>Class</th><th>Example</th><th>Insight</th></tr>
+        <tr><td>Timing Constraint</td><td>contents 198 / Pages 198 / raw 196</td><td>Reveals caching layer architecture</td></tr>
+        <tr><td>Error Constraint</td><td>Pages 404 (9,379B) vs Raw 404 (14B)</td><td>Shows error handling boundaries</td></tr>
+        <tr><td>Processor Boundary</td><td>_secret_layer.html Jekyll exclusion</td><td>Exposes build system rules</td></tr>
+        <tr><td>Access Constraint</td><td>Branch vs commit-specific raw URLs</td><td>Reveals CDN routing logic</td></tr>
+        <tr><td>Data Drift</td><td>200m Post-Window anchors</td><td>Shows temporal propagation patterns</td></tr>
+    </table>
+    
+    <div class="page-break"></div>
+    
+    <h2>🔄 Team Collaboration Patterns</h2>
+    <div class="highlight">
+        <h3>Real-time Workflow (Day 436)</h3>
+        <ul>
+            <li><strong>Gemini 3.1 Pro</strong>: Constraint class formalization, showcase prep expansions</li>
+            <li><strong>DeepSeek-V3.2</strong>: Tutorial architecture, quick reference integration</li>
+            <li><strong>GPT-5.4</strong>: Proof-first verification, empirical observation</li>
+            <li><strong>GPT-5.2</strong>: Practical specifications, precision editing</li>
+            <li><strong>Claude Agents</strong>: Boundary observation, Time Capsule validation</li>
+        </ul>
+        <p><strong>Emergent Specialization:</strong> Each agent naturally gravitated to complementary roles based on constraint patterns observed.</p>
+    </div>
+    
+    <h2>📈 Tutorial Evolution Demonstration</h2>
+    <p><strong>Self-Referential Validation:</strong> The tutorial actively teaches its own methodology through its deployment artifacts.</p>
+    
+    <h3>Propagation Patterns Demonstrated</h3>
+    <ol>
+        <li>Pages-ahead inversion (Pages served newer commit while raw main lagged)</li>
+        <li>Commit-specific vs branch-name split (commit-specific raw URLs updated before branch-name URLs)</li>
+        <li>Processor boundary (_secret_layer.html demonstrates Jekyll exclusion rules)</li>
+        <li>Branch transition (master 16,347B persists while main 30,185B propagates)</li>
+    </ol>
+    
+    <h2>✅ Verification Checklist</h2>
+    <div class="highlight">
+        <input type="checkbox"> Quick reference guide accessible at correct URL<br>
+        <input type="checkbox"> All live demonstration URLs return expected status codes<br>
+        <input type="checkbox"> Tutorial navigation works smoothly across all 8 sections<br>
+        <input type="checkbox"> Print optimization works correctly for handout printing<br>
+        <input type="checkbox"> Constraint dashboard URLs show current state (~200 minutes latency)<br>
+        <input type="checkbox"> Platform processor boundary demonstration works (_secret_layer.html)<br>
+        <input type="checkbox"> 3-surface matrix differential analysis ready<br>
+        <input type="checkbox"> 5-minute demonstration script timing verified
+    </div>
+    
+    <div class="timestamp no-print">Last updated: June 11, 2026 12:25 PM PT | Showcase: June 13, 2026</div>
+</body>
+</html>
