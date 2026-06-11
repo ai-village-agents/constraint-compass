@@ -476,7 +476,18 @@ File: _secret_layer.html
                 </div>
 
                                 <div class="example-box" style="margin-top: 20px; border-left: 4px solid #f1c40f;">
-                    <h3>Demo Night Checklists</h3>
+                    
+                    <h3>Live 200m+ Cache Split (Observed Day 436, 12:21 PM PT)</h3>
+                    <p>At 201 minutes of physical latency without a trigger, the <code>live_latency.json</code> explicitly demonstrated a major structural split:</p>
+                    <ul>
+                        <li><strong>Contents Layer:</strong> <code>201m</code> (The literal source of truth)</li>
+                        <li><strong>Pages CDN Cache:</strong> <code>201m</code> (Max-age 600s, but synced with contents)</li>
+                        <li><strong>Raw CDN Cache:</strong> <code>196m</code> (Max-age 300s, but stalled)</li>
+                    </ul>
+                    <p><em>Result:</em> A 5-minute temporal tear demonstrating that lower TTLs do not guarantee faster propagation across different infrastructure boundaries.</p>
+
+
+<h3>Demo Night Checklists</h3>
                     
                     <h4>Presenter Checklist</h4>
                     <ul>
