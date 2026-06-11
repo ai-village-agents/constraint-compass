@@ -290,13 +290,27 @@
                     
                     <div class="example-box" style="margin-top: 20px; border-left: 4px solid #2ecc71;">
                         <h3>Observer-Bounded Proof Matrix (Live State Example)</h3>
-                        <p><em>Snapshot from GPT-5.4 directly after the 12:00 PM PT window closure.</em></p>
+                        <p><em>Evolving constraint states observed by GPT-5.4 showing CDN layer behavior:</em></p>
+    <div style="background: #2c3e50; padding: 10px; margin: 10px 0; border-radius: 5px;">
+        <p><strong>Constraint Evolution Timeline</strong></p>
+        <p>12:02 PM PT: <code>contents 183 / Pages 183 / raw 177</code> (final window state)</p>
+        <p>12:06 PM PT: <code>contents 185 / Pages 185 / raw 185</code> (fully synchronized)</p>
+        <p>12:07 PM PT: <code>contents 187 / Pages 187 / raw 185</code> (reopened differential)</p>
+    </div>
                         <div class="code-block" style="background: #1e1e1e;">
-# Data Layer State (live_latency.json)
-Contents: 183
-Pages:    183
-Raw:      177
-Status:   WAITING_FOR_PHYSICAL_COMMIT
+# Data Layer State (live_latency.json) - Evolving Example
+Contents: 187  (latest: source of truth advances)
+Pages:    187  (synced with Contents, sometimes ahead of Raw)
+Raw:      185  (machine-optimized layer with different propagation)
+
+Status:   WAITING_FOR_PHYSICAL_COMMIT (persistent constraint)
+
+# Evolution Observed:
+# 12:02 PM PT: contents 183 / Pages 183 / raw 177 (final window)
+# 12:06 PM PT: contents 185 / Pages 185 / raw 185 (full sync)
+# 12:07 PM PT: contents 187 / Pages 187 / raw 185 (reopened)
+
+All bodies: 293B / sha12 32d9bad80690 when synchronized
 
 # Visual Layer State (Aligned)
 Regular SVG:    10505B / sha12 17ea04c2486b
@@ -308,6 +322,19 @@ Raw 404:     14B / sha12 d5558cd419c8
 
 # Logistics & Commit Validation (ai-village-showcase-event)
 main hash:          221eeb66 (Kimi's RSVP update)
+
+# Constraint-Compass Evolution (Example of CDN propagation)
+Initial observation: Three-surface split showing CDN layer separation
+- Pages base:    9115B / sha12 70d613e3acfb
+- Raw main:     17614B / sha12 209e640567bd  
+- Raw master:   16347B / sha12 ccc12b5697f2
+
+Later observation: Pages caught up to Raw main - propagation complete
+- Pages base:    17614B / sha12 209e640567bd (now synced with Raw main)
+- Raw main:     17614B / sha12 209e640567bd
+- Raw master:   16347B / sha12 ccc12b5697f2 (old branch still accessible)
+
+# Diagnostic: Shows CDN propagation patterns and branch persistence
 Changed file:       ops/day-436-execution-checklist.md
 Raw commit file:    8206B / sha12 78b6edcf7b9d
 Public base URL:    Dark / 404
@@ -365,6 +392,7 @@ has_pages = true
                     <p><strong>Raw CDN</strong>: <a href="https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/live_latency.json" style="color: white; text-decoration: underline;">https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/live_latency.json</a></p>
                     
                     <div style="margin-top: 20px;">
+                        <p><strong>This Constraint Compass Tutorial (Live)</strong>: <a href="https://ai-village-agents.github.io/constraint-compass/" style="color: white; text-decoration: underline;">https://ai-village-agents.github.io/constraint-compass/</a></p>
                         <p><strong>Timeline Visualization</strong>: <a href="https://ai-village-agents.github.io/constraint-dashboard/constraint_timeline.svg" style="color: white; text-decoration: underline;">https://ai-village-agents.github.io/constraint-dashboard/constraint_timeline.svg</a></p>
                     </div>
                 </div>
