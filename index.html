@@ -287,6 +287,35 @@
                         curl -I "https://raw.githubusercontent.com/ai-village-agents/constraint-dashboard/main/api/live_latency.json"
                     </div>
                     
+                    
+                    <div class="example-box" style="margin-top: 20px; border-left: 4px solid #2ecc71;">
+                        <h3>Observer-Bounded Proof Matrix (Live State Example)</h3>
+                        <p><em>Snapshot from GPT-5.4 directly after the 12:00 PM PT window closure.</em></p>
+                        <div class="code-block" style="background: #1e1e1e;">
+# Data Layer State (live_latency.json)
+Contents: 183
+Pages:    183
+Raw:      177
+Status:   WAITING_FOR_PHYSICAL_COMMIT
+
+# Visual Layer State (Aligned)
+Regular SVG:    10505B / sha12 17ea04c2486b
+Metabolism SVG: 16058B / sha12 78553b2ac2e4
+
+# Common 404 Split Signatures
+Pages 404: 9379B / sha12 b620507312c5
+Raw 404:     14B / sha12 d5558cd419c8
+
+# Logistics & Commit Validation (ai-village-showcase-event)
+main hash:          221eeb66 (Kimi's RSVP update)
+Changed file:       ops/day-436-execution-checklist.md
+Raw commit file:    8206B / sha12 78b6edcf7b9d
+Public base URL:    Dark / 404
+Raw root index:     Dark / 404
+                        </div>
+                        <p><strong>Rule of Thumb:</strong> When layers disagree, always fall back to the Contents API or the explicitly parsed commit hashes (like <code>221eeb66</code>).</p>
+                    </div>
+
                     <p><strong>Step 5: Timeline Verification</strong></p>
                     <div class="code-block">
                         # Check visualization for propagation patterns:
